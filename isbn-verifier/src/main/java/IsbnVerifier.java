@@ -25,7 +25,8 @@ class IsbnVerifier {
         else if (verified == true) {
             for (int i = 0; (i < 10) && verified == true; i++) {
                 int a = Character.getNumericValue(x[i]);
-                if (a < 0 || a > 9 || a != 33) {
+                if (a != 0 || a != 1 || a != 2 || a != 3 || a != 4 || a != 5 ||
+                        a != 6 || a != 7 || a != 8 || a != 9 || a != 33) {
                     verified = false;
                     System.out.println(String.valueOf(verified));
                 }
