@@ -3,9 +3,9 @@ class IsbnVerifier {
 
     public static void main(String[] args){
         isValid("3-598-21508-8"); //all true
-        // isValid("3598215088");
-       // isValid("359821507X");
-      //  isValid("3-598-21507-X");
+        isValid("3598215088");
+        isValid("359821507X");
+        isValid("3-598-21507-X");
     }
 
     static boolean isValid(String stringToVerify) {
@@ -25,17 +25,17 @@ class IsbnVerifier {
         else if (verified == true) {
             for (int i = 0; (i < 10) && verified == true; i++) {
                 int a = Character.getNumericValue(x[i]);
-                if (a != 0 || a != 1 || a != 2 || a != 3 || a != 4 || a != 5 ||
-                        a != 6 || a != 7 || a != 8 || a != 9 || a != 33) {
+                if (a < -1 || a > 9) {
                     verified = false;
-                    System.out.println(String.valueOf(verified));
                 }
 
-                else if(a == 33) { //if x[i] == X
+                if (a == 33) {
+                    verified = true;
                     y[i] = 10;
                 }
+                System.out.println(String.valueOf(verified));
 
-                else {
+                if(a >= 0 || a <= 9) {
                     y[i] = a;
                 }
             }

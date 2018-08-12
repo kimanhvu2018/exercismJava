@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">4</div>
+<div class="counter">3</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.019s</div>
+<div class="counter">0.026s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">75%</div>
+<div class="percent">81%</div>
 <p>successful</p>
 </div>
 </td>
@@ -73,14 +73,15 @@
 <div id="tab0" class="tab">
 <h2>Failed tests</h2>
 <div class="test">
-<a name="isbnWithoutSeparatingDashesAndXAsCheckDigit"></a>
-<h3 class="failures">isbnWithoutSeparatingDashesAndXAsCheckDigit</h3>
+<a name="checkDigitOfXShouldNotBeUsedForZero"></a>
+<h3 class="failures">checkDigitOfXShouldNotBeUsedForZero</h3>
 <span class="code">
 <pre>java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
-	at org.junit.Assert.assertTrue(Assert.java:52)
-	at IsbnVerifierTest.isbnWithoutSeparatingDashesAndXAsCheckDigit(IsbnVerifierTest.java:61)
+	at org.junit.Assert.assertFalse(Assert.java:64)
+	at org.junit.Assert.assertFalse(Assert.java:74)
+	at IsbnVerifierTest.checkDigitOfXShouldNotBeUsedForZero(IsbnVerifierTest.java:91)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -133,14 +134,15 @@
 </span>
 </div>
 <div class="test">
-<a name="validIsbnNumber"></a>
-<h3 class="failures">validIsbnNumber</h3>
+<a name="invalidIsbnCheckDigit"></a>
+<h3 class="failures">invalidIsbnCheckDigit</h3>
 <span class="code">
 <pre>java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
-	at org.junit.Assert.assertTrue(Assert.java:52)
-	at IsbnVerifierTest.validIsbnNumber(IsbnVerifierTest.java:19)
+	at org.junit.Assert.assertFalse(Assert.java:64)
+	at org.junit.Assert.assertFalse(Assert.java:74)
+	at IsbnVerifierTest.invalidIsbnCheckDigit(IsbnVerifierTest.java:25)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -193,74 +195,15 @@
 </span>
 </div>
 <div class="test">
-<a name="validIsbnNumberWithCheckDigitOfTen"></a>
-<h3 class="failures">validIsbnNumberWithCheckDigitOfTen</h3>
+<a name="xIsOnlyValidAsACheckDigit"></a>
+<h3 class="failures">xIsOnlyValidAsACheckDigit</h3>
 <span class="code">
 <pre>java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
-	at org.junit.Assert.assertTrue(Assert.java:52)
-	at IsbnVerifierTest.validIsbnNumberWithCheckDigitOfTen(IsbnVerifierTest.java:31)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
-	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
-	at com.sun.proxy.$Proxy1.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:109)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
-	at java.base/java.lang.Thread.run(Thread.java:844)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="validIsbnWithoutSeparatingDashes"></a>
-<h3 class="failures">validIsbnWithoutSeparatingDashes</h3>
-<span class="code">
-<pre>java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:86)
-	at org.junit.Assert.assertTrue(Assert.java:41)
-	at org.junit.Assert.assertTrue(Assert.java:52)
-	at IsbnVerifierTest.validIsbnWithoutSeparatingDashes(IsbnVerifierTest.java:55)
+	at org.junit.Assert.assertFalse(Assert.java:64)
+	at org.junit.Assert.assertFalse(Assert.java:74)
+	at IsbnVerifierTest.xIsOnlyValidAsACheckDigit(IsbnVerifierTest.java:49)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -325,13 +268,13 @@
 </thead>
 <tr>
 <td class="success">checkDigitIsACharacterOtherThanX</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">checkDigitOfXShouldNotBeUsedForZero</td>
-<td class="success">0s</td>
-<td class="success">passed</td>
+<td class="failures">checkDigitOfXShouldNotBeUsedForZero</td>
+<td class="failures">0.001s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">emptyIsbn</td>
@@ -340,7 +283,7 @@
 </tr>
 <tr>
 <td class="success">inputIsNineCharacters</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -350,28 +293,28 @@
 </tr>
 <tr>
 <td class="success">invalidCharactersAreNotIgnored</td>
-<td class="success">0.010s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">invalidIsbnCheckDigit</td>
-<td class="success">0s</td>
-<td class="success">passed</td>
+<td class="failures">invalidIsbnCheckDigit</td>
+<td class="failures">0.001s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">isbnWithoutCheckDigit</td>
-<td class="success">0.004s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">isbnWithoutCheckDigitAndDashes</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">isbnWithoutSeparatingDashesAndXAsCheckDigit</td>
-<td class="failures">0s</td>
-<td class="failures">failed</td>
+<td class="success">isbnWithoutSeparatingDashesAndXAsCheckDigit</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">tooLongIsbn</td>
@@ -380,48 +323,176 @@
 </tr>
 <tr>
 <td class="success">tooLongIsbnAndNoDashes</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">validIsbnNumber</td>
-<td class="failures">0s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="failures">validIsbnNumberWithCheckDigitOfTen</td>
-<td class="failures">0.002s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="failures">validIsbnWithoutSeparatingDashes</td>
-<td class="failures">0.002s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="success">xIsOnlyValidAsACheckDigit</td>
-<td class="success">0s</td>
+<td class="success">validIsbnNumber</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">validIsbnNumberWithCheckDigitOfTen</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">validIsbnWithoutSeparatingDashes</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="failures">xIsOnlyValidAsACheckDigit</td>
+<td class="failures">0.003s</td>
+<td class="failures">failed</td>
 </tr>
 </table>
 </div>
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>false
+<pre>true
+359821507
 false
 false
+true
+3598P1581X
+true
+true
+true
+true
 false
 false
+true
+
 false
 false
+true
+359821507X
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+359821507A
+true
+true
+true
+true
+true
+true
+true
+true
+true
 false
 false
+true
+3598215078X
 false
 false
+true
+35982X5079
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+134456729
 false
 false
+true
+359821507X
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+359821507XX
 false
+false
+true
+3598215088
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+359821507
+false
+false
+true
+3598215088
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+359821515X
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+3598215089
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+3132P34035
+true
+true
+true
+true
 false
 false
 </pre>
@@ -435,7 +506,7 @@ false
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.8</a> at 4 Aug 2018, 15:49:02</p>
+<a href="http://www.gradle.org">Gradle 4.8</a> at 12 Aug 2018, 23:46:12</p>
 </div>
 </div>
 </body>
