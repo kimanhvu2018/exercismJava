@@ -3,13 +3,15 @@ class IsbnVerifier {
 
     public static void main(String[] args){
         isValid("3-598-21508-9"); //invalidIsbnCheckDigit
-        isValid("3-598-21515-X");
-        isValid("3-598-2X507-9");
+        isValid("3-598-21515-X");   //checkDigitOfXShouldNotBeUsedForZero
+
 
     }
 
     static boolean isValid(String stringToVerify) {
         boolean verified = true;
+        int answer = 0;
+        int number = 10;
         stringToVerify = stringToVerify.replaceAll("-", ""); // removes all instances of '-' if there are any
         System.out.println(String.valueOf(verified));
         char[] x = stringToVerify.toCharArray();
@@ -37,6 +39,12 @@ class IsbnVerifier {
 
                 if(a >= 0 || a <= 9) {
                     y[i] = a;
+                    answer += a * number;
+                    number--;
+
+                    if(answer % 11 == 0 && i == 8 && x[9] == 'X'){
+                        verified = false;
+                    }
                 }
             }
         }

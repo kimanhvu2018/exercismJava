@@ -22,8 +22,8 @@
       <file leaf-file-name="IsbnVerifier.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/IsbnVerifier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+            <state relative-caret-position="75">
+              <caret line="5" column="74" lean-forward="false" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -570,12 +570,12 @@
       <workItem from="1533935316022" duration="657000" />
       <workItem from="1533992389695" duration="925000" />
       <workItem from="1534113428683" duration="597000" />
-      <workItem from="1534196640046" duration="1433000" />
+      <workItem from="1534196640046" duration="1789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39621000" />
+    <option name="totallyTimeSpent" value="39977000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="721" y="23" width="718" height="877" extended-state="0" />
@@ -889,8 +889,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/IsbnVerifier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        <state relative-caret-position="75">
+          <caret line="5" column="74" lean-forward="false" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
           <folding />
         </state>
       </provider>
