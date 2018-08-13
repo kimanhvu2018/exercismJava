@@ -2,10 +2,10 @@ class IsbnVerifier {
 
 
     public static void main(String[] args){
-        isValid("3-598-21508-8"); //all true
-        isValid("3598215088");
-        isValid("359821507X");
-        isValid("3-598-21507-X");
+        isValid("3-598-21508-9"); //invalidIsbnCheckDigit
+        isValid("3-598-21515-X");
+        isValid("3-598-2X507-9");
+
     }
 
     static boolean isValid(String stringToVerify) {
@@ -29,9 +29,9 @@ class IsbnVerifier {
                     verified = false;
                 }
 
-                if (a == 33) {
+                if (i == 9 && a == 33) {
                     verified = true;
-                    y[i] = 10;
+                    y[9] = 10;
                 }
                 System.out.println(String.valueOf(verified));
 
