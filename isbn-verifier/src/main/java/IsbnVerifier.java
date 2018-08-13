@@ -12,6 +12,7 @@ class IsbnVerifier {
         boolean verified = true;
         int answer = 0;
         int number = 10;
+        int checkdigit = 0;
         stringToVerify = stringToVerify.replaceAll("-", ""); // removes all instances of '-' if there are any
         System.out.println(String.valueOf(verified));
         char[] x = stringToVerify.toCharArray();
@@ -37,17 +38,37 @@ class IsbnVerifier {
                 }
                 System.out.println(String.valueOf(verified));
 
-                if(a >= 0 || a <= 9) {
+                if (a >= 0 || a <= 9) {
                     y[i] = a;
                     answer += a * number;
                     number--;
 
-                    if(answer % 11 == 0 && i == 8 && x[9] == 'X'){
+                    if (answer % 11 == 0 && i == 8 && x[9] == 'X') {
                         verified = false;
                     }
+
+                 /*   if (i == 8) {
+                        if (answer % 11 == 0) {
+                            if (x[9] != 0) {
+                                verified = false;
+                            } else {
+                                verified = true;
+                            }
+                        }
+                        if (answer % 11 != 0) {
+                            while (answer % 11 != 0) {
+                                answer++;
+                                checkdigit++;
+                            }
+
+                            if (checkdigit != x[9]) {
+                                verified = false;
+                            }
+                        }
+                   */ }
                 }
             }
-        }
+
 
         else if(verified == true){
             if (((y[0] * 10 + y[1] * 9 + y[2] * 8 + y[3] * 7 + y[4] * 6 + y[5] * 5 + y[6] * 4 + y[7] * 3 + y[8] * 2 + y[9]) % 11) != 0) {

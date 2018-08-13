@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="IsbnVerifierTest" tests="16" skipped="0" failures="1" errors="0" timestamp="2018-08-13T22:31:27" hostname="Kim-Anhs-MacBook-Pro.local" time="0.036">
+<testsuite name="IsbnVerifierTest" tests="16" skipped="0" failures="1" errors="0" timestamp="2018-08-13T23:21:32" hostname="Kim-Anhs-MacBook-Pro.local" time="0.04">
   <properties/>
-  <testcase name="isbnWithoutCheckDigit" classname="IsbnVerifierTest" time="0.005"/>
+  <testcase name="isbnWithoutCheckDigit" classname="IsbnVerifierTest" time="0.004"/>
   <testcase name="invalidCharacterInIsbn" classname="IsbnVerifierTest" time="0.001"/>
   <testcase name="emptyIsbn" classname="IsbnVerifierTest" time="0.001"/>
   <testcase name="validIsbnNumberWithCheckDigitOfTen" classname="IsbnVerifierTest" time="0.001"/>
   <testcase name="checkDigitIsACharacterOtherThanX" classname="IsbnVerifierTest" time="0.001"/>
   <testcase name="tooLongIsbnAndNoDashes" classname="IsbnVerifierTest" time="0.001"/>
   <testcase name="xIsOnlyValidAsACheckDigit" classname="IsbnVerifierTest" time="0.001"/>
-  <testcase name="inputIsNineCharacters" classname="IsbnVerifierTest" time="0.001"/>
+  <testcase name="inputIsNineCharacters" classname="IsbnVerifierTest" time="0.0"/>
   <testcase name="isbnWithoutSeparatingDashesAndXAsCheckDigit" classname="IsbnVerifierTest" time="0.001"/>
-  <testcase name="tooLongIsbn" classname="IsbnVerifierTest" time="0.001"/>
+  <testcase name="tooLongIsbn" classname="IsbnVerifierTest" time="0.0"/>
   <testcase name="validIsbnNumber" classname="IsbnVerifierTest" time="0.001"/>
   <testcase name="isbnWithoutCheckDigitAndDashes" classname="IsbnVerifierTest" time="0.0"/>
   <testcase name="validIsbnWithoutSeparatingDashes" classname="IsbnVerifierTest" time="0.001"/>
   <testcase name="checkDigitOfXShouldNotBeUsedForZero" classname="IsbnVerifierTest" time="0.001"/>
-  <testcase name="invalidIsbnCheckDigit" classname="IsbnVerifierTest" time="0.016">
+  <testcase name="invalidIsbnCheckDigit" classname="IsbnVerifierTest" time="0.019">
     <failure message="java.lang.AssertionError" type="java.lang.AssertionError">java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -72,7 +72,7 @@
 	at java.base/java.lang.Thread.run(Thread.java:844)
 </failure>
   </testcase>
-  <testcase name="invalidCharactersAreNotIgnored" classname="IsbnVerifierTest" time="0.001"/>
+  <testcase name="invalidCharactersAreNotIgnored" classname="IsbnVerifierTest" time="0.002"/>
   <system-out><![CDATA[true
 359821507
 false
