@@ -1,28 +1,15 @@
 class IsbnVerifier {
 
-
-    public static void main(String[] args){
-        isValid("3-598-21508-9"); //invalidIsbnCheckDigit
-        isValid("3-598-21515-X");   //checkDigitOfXShouldNotBeUsedForZero
-
-
-    }
-
     static boolean isValid(String stringToVerify) {
         boolean verified = true;
         int answer = 0;
-        int number = 10;
-        int checkdigit = 0;
-        stringToVerify = stringToVerify.replaceAll("-", ""); // removes all instances of '-' if there are any
-        System.out.println(String.valueOf(verified));
+        stringToVerify = stringToVerify.replaceAll("-", "").toUpperCase();
         char[] x = stringToVerify.toCharArray();
-        int [] y = new int[10];
-
-        System.out.println(stringToVerify);
+        int[] y = new int[10];
 
         if (stringToVerify.length() != 10) {    // makes sure there are 10 numbers in the string
             verified = false;
-            System.out.println(String.valueOf(verified));
+            System.out.println("1");
         }
 
         else if (verified == true) {
@@ -36,50 +23,26 @@ class IsbnVerifier {
                     verified = true;
                     y[9] = 10;
                 }
-                System.out.println(String.valueOf(verified));
 
-                if (a >= 0 || a <= 9) {
+                if (a >= 0 && a <= 9) {
                     y[i] = a;
-                    answer += a * number;
-                    number--;
+                    answer += a * (10 - i);
 
-                    if (answer % 11 == 0 && i == 8 && x[9] == 'X') {
+                    if(i==8 && answer % 11 == 0 && x[9] == 'X'){
                         verified = false;
                     }
 
-                 /*   if (i == 8) {
-                        if (answer % 11 == 0) {
-                            if (x[9] != 0) {
-                                verified = false;
-                            } else {
-                                verified = true;
-                            }
+                    if (i == 9) {
+                        if (answer % 11 != 0){
+                            verified = false;
                         }
-                        if (answer % 11 != 0) {
-                            while (answer % 11 != 0) {
-                                answer++;
-                                checkdigit++;
-                            }
-
-                            if (checkdigit != x[9]) {
-                                verified = false;
-                            }
-                        }
-                   */ }
+                    }
                 }
-            }
-
-
-        else if(verified == true){
-            if (((y[0] * 10 + y[1] * 9 + y[2] * 8 + y[3] * 7 + y[4] * 6 + y[5] * 5 + y[6] * 4 + y[7] * 3 + y[8] * 2 + y[9]) % 11) != 0) {
-                verified = false;
-                System.out.println(String.valueOf(verified));
             }
         }
         System.out.println(String.valueOf(verified));
         return verified;
     }
-
 }
 
 
